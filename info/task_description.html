@@ -1,0 +1,61 @@
+
+<p>
+The '<a href='https://en.wikipedia.org/wiki/Nonogram'>nonogaram</a>' is an interesting grid puzzle.
+</p>
+
+<p>
+We only use that one line in this mission.
+</p>
+
+<p>
+You are given a row string (String) and clue numbers (list of Integer).
+Each clue numbers represents the length of continuing filled cells. They will appear in that order.
+</p>
+
+<p>
+If you find more filling cells and empty cells, reflect them all in the input string and return the string.
+</p>
+
+<div class="for_info_only">
+    <p><strong>Example:</strong></p>
+    <pre class="brush: python">
+nonogram_row('??????????', [8]) == '??OOOOOO??'
+nonogram_row('??????????', [4, 3]) == '??OO???O??'
+nonogram_row('???O????O?', [3, 1]) == 'X??O??XXOX'
+nonogram_row('????X?X???', [3, 2]) == '?OO?XXX?O?'
+nonogram_row('O?X?O?????', [1, 3]) == 'OXX?OO?XXX'
+nonogram_row('??OO?OO???O?O??', [5, 2, 2]) =='XXOOOOOXXOOXOOX'
+nonogram_row('????OO?????', [4]) =='XX??OO??XX'</pre>
+
+    <ul>
+        <li>Symbol details:</li>
+        <ul>
+            <li>'?' : unknown cell.</li>
+            <li>'O' : filled cell.</li>
+            <li>'X' : empty cell.</li>
+        </ul>
+    </ul>
+    <!--
+    <p style="text-align: left;">
+        <img  title="example" src="{{MEDIA}}******.png" alt="example" style="max-height: 244px"/>
+    </p>
+    -->
+</div>
+
+<p><strong>Input: </strong>two arguments, a input row (String), clue numbers(list of Integer)</p>
+
+<p><strong>Output: </strong>a result row (String)</p>
+
+<p>
+<strong>How it is used:</strong><br>
+You will get the basis of nonogram-solver.
+</p>
+
+<p>
+<strong>Precondition:</strong><br>
+<ul>
+    <li>all(r in ('?', 'O', 'X') for r in row_string)</li>
+    <li>all(1 &le; cn &le; len(row_string) for cn in clue_numbers)</li>
+    <li>sum(clue_numbers) + len(clue_numbers) - 1 &le; len(row_string)</li>
+</ul>
+</p>
