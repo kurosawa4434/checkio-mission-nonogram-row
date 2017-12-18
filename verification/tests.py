@@ -40,7 +40,7 @@ TESTS = {
             "explanation": 'Joining and splitting'
         },
         {
-            "input": ['????OO?????', [4]],
+            "input": ['????OO????', [4]],
             "answer": 'XX??OO??XX',
             "explanation": 'Mercury'
         },
