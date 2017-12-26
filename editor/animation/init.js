@@ -29,7 +29,7 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
             const row_string = dataInp[0];
             const cell_length = row_string.length;
             const clue_numbers = dataInp[1].join(',');
-            const h_margin = 50;
+            const h_margin = 60;
             const top_margin = 5;
             const cell_size = 15;
 

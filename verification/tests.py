@@ -6,6 +6,26 @@ Each test is dict with
     "answer" -- your right answer
     "explanation" -- not necessary key, it's using for additional info in animation.
 """
+# create Ramdoms
+from random import randint
+from re import findall
+from my_solution import nonogram_row
+
+random_tests = []
+
+for _ in range(10):
+    length = randint(5, 15)
+
+    while True:
+        row = ''.join('XO'[randint(0, 1)] for i in range(length))
+        fa = findall(r'O+', row)
+        if 1 <= len(fa) <= 4: break
+
+    row_string = ''.join('?' if randint(0, 9) else c for c in row)
+    clue_numbers = list(map(len, fa))
+    answer = nonogram_row(row_string, clue_numbers)
+    random_tests.append({'input': [row_string, clue_numbers],
+                        'answer': answer})
 
 TESTS = {
     "Basics": [
@@ -56,13 +76,12 @@ TESTS = {
             "answer": '??????????',
             "explanation": ''
         },
-    ],
-    "Extra": [
         {
             "input": ['???????????????', [5, 5]],
             "answer": '????O?????O????',
             "explanation": ''
 
         },
-    ]
+    ],
+    "Randoms": random_tests
 }
