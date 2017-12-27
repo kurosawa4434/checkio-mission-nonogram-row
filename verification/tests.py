@@ -21,7 +21,8 @@ for _ in range(10):
         fa = findall(r'O+', row)
         if 1 <= len(fa) <= 4: break
 
-    row_string = ''.join('?' if randint(0, 9) else c for c in row)
+    row_string = ''.join(('?'*38+'XO')[randint(0,39)]
+                    if randint(0, 9) else c for c in row)
     clue_numbers = list(map(len, fa))
     answer = nonogram_row(row_string, clue_numbers)
     random_tests.append({'input': [row_string, clue_numbers],
@@ -63,6 +64,11 @@ TESTS = {
             "input": ['????OO????', [4]],
             "answer": 'XX??OO??XX',
             "explanation": 'Mercury'
+        },
+        {
+            "input": ['??X??', [3]],
+            "answer": None,
+            "explanation": 'Wrong string'
         },
     ],
     "Edges": [

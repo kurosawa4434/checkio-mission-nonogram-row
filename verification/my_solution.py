@@ -33,6 +33,9 @@ def nonogram_row(row_string, clue_numbers):
     # step 1: get all possibilities
     search(clue_numbers, row_string)
 
+    if not results:
+        return None
+
     # step 2: summarize the possibilities
     for i in range(len(row_string)):
         if len(set([row[i] for row in results])) == 1:
