@@ -66,6 +66,16 @@ TESTS = {
             "explanation": 'Mercury'
         },
         {
+            "input": ['???X?', [0]],
+            "answer": 'XXXXX',
+            "explanation": 'Empty_01'
+        },
+        {
+            "input": ['?????', []],
+            "answer": 'XXXXX',
+            "explanation": 'Empty_02'
+        },
+        {
             "input": ['??X??', [3]],
             "answer": None,
             "explanation": 'Wrong string'
