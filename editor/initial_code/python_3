@@ -10,6 +10,8 @@ if __name__ == '__main__':
     assert nonogram_row('O?X?O?????', [1, 3]) == 'OXX?OO?XXX', 'Glue'
     assert nonogram_row('??OO?OO???O?O??', [5, 2, 2]) == 'XXOOOOOXXOOXOOX', 'Joining and splitting'
     assert nonogram_row('????OO????', [4]) == 'XX??OO??XX', 'Mercury'
+    assert nonogram_row('???X?', [0]) == 'XXXXX', 'Empty_1'
+    assert nonogram_row('?????', []) == 'XXXXX', 'Empty_2'
     assert nonogram_row('??X??', [3]) is None, 'Wrong string'
     print("Check done.")
 
