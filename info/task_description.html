@@ -1,20 +1,23 @@
 
 <p>
 The '<a href='https://en.wikipedia.org/wiki/Nonogram'>nonogaram</a>' is an interesting grid puzzle.
+You need to identify all cells ('filled' or 'empty') in the grid.
 </p>
-
 <p>
-We only use that one line in this mission.
+But we only use that one line in this mission.
 </p>
 
 <p>
 You are given a row string (String) and clue numbers (list of Integer).
-Each clue numbers represents the length of continuing filled cells. They will appear in that order.
+Each clue numbers represents the length of continuing filled cells. They will appear in that order.<br>
+If you identify more filling cells or empty cells, reflect them all in the input string and return the string. If the row string and clue numbers don't match, return None.
 </p>
 
-<p>
-If you find more filling cells and empty cells, reflect them all in the input string and return the string. If the row string and clue numbers don't match, return None.
-</p>
+<div class="for_info_only">
+    <p style="text-align: left;">
+        <img  title="example" src="{{MEDIA}}nonogram_row_example.png" alt="example" style="max-height: 244px"/>
+    </p>
+</div>
 <ul>
     <li>Symbol details:</li>
     <ul>
@@ -34,9 +37,6 @@ nonogram_row('???X?', [0]) == 'XXXXX'
 nonogram_row('?????', []) == 'XXXXX'
 nonogram_row('??X??', [3]) is None</pre>
 
-    <p style="text-align: left;">
-        <img  title="example" src="{{MEDIA}}nonogram_row_example.png" alt="example" style="max-height: 244px"/>
-    </p>
 </div>
 
 <p><strong>Input: </strong>two arguments, a input row (String), clue numbers(list of Integer)</p>
